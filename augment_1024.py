@@ -45,8 +45,8 @@ outputImageEdge = 512
 
 fileNameCSV = "whale_heads.csv"
 headsCSV = open(fileNameCSV).readlines()[1:]
-imagesDir = "./720x480/"
-outputDir = "./augmented_images/"
+imagesDir = "../crop1024/"
+outputDir = "../augmented_images/"
 
 augment_file_name = "augment.sh"
 
