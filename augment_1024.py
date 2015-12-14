@@ -59,6 +59,7 @@ for line in headsCSV:
     image_path = imagesDir + image_name
     image_basename = path.splitext(path.basename(image_name))[0]
     image_extension = path.splitext(path.basename(image_name))[1]
+    augment_file.write("echo {} \n".format(image_basename))
     augment_file.write("# {} \n".format(image_basename))
     for i in range(100):
         augmented_image_path = outputDir + image_basename + '_' + str(i).zfill(2) + image_extension
