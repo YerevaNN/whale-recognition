@@ -12,9 +12,9 @@ def generate_next_augment(input_image_path, output_image_path):
     center_x = round_int(uniform(0.4, 0.6) * imageEdge)
     center_y = round_int(uniform(0.4, 0.6) * imageEdge)
     radius = min([center_x, center_y, imageEdge - center_x, imageEdge - center_y])
-    rotate_pi = rotation / 180 * pi
-    max_square_edge = 2 * radius / (fabs(sin(rotate_pi)) + fabs(cos(rotate_pi)))
-    square_edge = round_int(uniform(512, max_square_edge))
+    rotate_pi = float(rotation) / 180 * pi
+    max_square_edge = 2 * float(radius) / (fabs(sin(rotate_pi)) + fabs(cos(rotate_pi)))
+    square_edge = round_int(uniform(400, max_square_edge))
     brightness = round_int(uniform(-20, 20))
     contrast = round_int(uniform(-20, 20))
 
