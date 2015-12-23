@@ -22,14 +22,16 @@ for line in labelsCSV:
 equalFile = open(equalFileName, "w")
 for classID, imageNames in classID2ImageNames.items():
     length = len(imageNames)
-    for i in range(100):
-        imageIndex = i % length
-        name = imageNames[imageIndex]
-        imageBasename = splitext(basename(name))[0]
-        imageExtension = splitext(basename(name))[1]
+    for j in range(5):
+        for i in range(100):
+            imageIndex = i % length
+            name = imageNames[imageIndex]
+            imageBasename = splitext(basename(name))[0]
+            imageExtension = splitext(basename(name))[1]
+            augmentIndex = (i + j) % 100
 
-        augmentedImageName = augmentedImagesDir + imageBasename + '_' + str(i).zfill(2) + imageExtension
+            augmentedImageName = augmentedImagesDir + imageBasename + '_' + str(augmentIndex).zfill(2) + imageExtension
 
-        equalFile.write("{0} {1}\n".format(augmentedImageName, classID))
+            equalFile.write("{0} {1}\n".format(augmentedImageName, classID))
 
 equalFile.close()
